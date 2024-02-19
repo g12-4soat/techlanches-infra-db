@@ -15,6 +15,24 @@ Repositório dedicado ao projeto TechChallenge da FIAP - Turma 4SOAT
 
 ---
 
+## Motivações
+Nesse tópico falaremos sobre as motivações para a escolha da stack do banco de dados.
+
+### SQL Server
+Optamos pelo SQL Server por conta da familiaridade do time com a tecnologia e também pelas características abaixo
+- <b>Desempenho e Escalabilidade:</b> O SQL Server é conhecido por seu alto desempenho e capacidade de escalar vertical e horizontalmente. Isso permite que as empresas cresçam suas bases de dados de acordo com a necessidade, mantendo a eficiência.
+- <b>Segurança:</b> Oferece recursos robustos de segurança, incluindo criptografia de dados, autenticação integrada e gerenciamento de permissões, garantindo a proteção dos dados sensíveis.
+- <b>Compatibilidade com Aplicações:</b> Tem ampla aceitação e integração com várias aplicações e ferramentas de desenvolvimento, facilitando a implementação em ambientes corporativos.
+
+### Amazon RDS
+Optamos pelo Amazon RDS por conta do custo benefício e também pelas características abaixo
+- <b>Gerenciamento Simplificado:</b> O Amazon RDS simplifica tarefas de administração de banco de dados, como provisionamento de hardware, configuração de banco de dados, patching de software, e backups, permitindo que os desenvolvedores se concentrem no desenvolvimento de aplicações.
+- <b>Alta Disponibilidade e Durabilidade:</b> Oferece configurações de replicação fáceis de configurar, backups automatizados, garantindo a disponibilidade e a durabilidade dos dados.
+- <b>Escalabilidade:</b> Permite ajustar facilmente os recursos computacionais ou a capacidade de armazenamento com apenas alguns cliques ou de forma automática, proporcionando flexibilidade conforme a demanda varia.
+- <b>Compatibilidade:</b> Suporta vários motores de banco de dados, incluindo MySQL, PostgreSQL, Oracle, SQL Server, e MariaDB, oferecendo flexibilidade para trabalhar com a tecnologia preferida ou exigida pelo projeto.
+  
+---
+
 ## Dicionário de dados
 
 <details>
@@ -82,6 +100,6 @@ Repositório dedicado ao projeto TechChallenge da FIAP - Turma 4SOAT
 
 Diagrama de dados criado com [DrawSQL](https://drawsql.app/teams/tech-lanches/diagrams/tech-lanches)
 
-
+ <img src="https://github.com/g12-4soat/techlanches-infra-db/blob/main/docs/Fase3/diagrama-dados.png" style="max-width: 100%;">
 
 ---
