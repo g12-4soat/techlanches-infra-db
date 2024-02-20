@@ -100,6 +100,6 @@ Optamos pelo Amazon RDS por conta do custo benefício e também pelas caracterí
 
 Diagrama de dados criado com [DrawSQL](https://drawsql.app/teams/tech-lanches/diagrams/tech-lanches)
 
- <img src="https://github.com/g12-4soat/techlanches-infra-db/blob/feature/README/docs/Fase3/diagrama-dados.png" style="max-width: 100%;">
+ <img src="https://github.com/g12-4soat/techlanches-infra-db/blob/main/docs/Fase3/diagrama-dados.png" style="max-width: 100%;">
 
 ---
