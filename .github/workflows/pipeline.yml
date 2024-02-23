@@ -9,12 +9,19 @@ jobs:
     name: Terraform Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v3
+
+      - name: Login to AWS
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:          
+          aws-region: 'us-east-1'
+          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.SECRET_KEY }}
 
       - name: Terraform fmt
         id: fmt
-        run: terraform fmt -check
+        run: terraform fmt --recursive
         
       - name: Terraform Init
         id: init
