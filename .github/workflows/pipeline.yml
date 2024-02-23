@@ -11,29 +11,38 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+    
       - name: Login to AWS
         uses: aws-actions/configure-aws-credentials@v1-node16
-        with:          
+        with:
           aws-region: 'us-east-1'
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-
+        
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.6.2
+            terraform_version: 1.6.2
+      
       - name: Prepare environment
         id: tf-init
+        working-directory: src
         run: terraform init 
+
       - name: Terraform fmt
-        id: tf-fmt
+        id: tf-fmt        
+        working-directory: src
         run: terraform fmt --recursive
+
       - name: Terraform validate
-        id: tf-validate
+        id: tf-validate        
+        working-directory: src
         run: terraform validate -no-color
+
       - name: Terraform Plan
-        id: tf-plan
+        id: tf-plan        
+        working-directory: src
         run: terraform plan -lock=false -no-color -input=false
         continue-on-error: true
   
