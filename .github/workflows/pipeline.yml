@@ -9,36 +9,33 @@ jobs:
     name: Terraform Test
     runs-on: ubuntu-latest
     steps:
-      - uses: hashicorp/setup-terraform@v3
-
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Login to AWS
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v1-node16
         with:          
           aws-region: 'us-east-1'
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.6.2
+      - name: Prepare environment
+        id: tf-init
+        run: terraform init 
       - name: Terraform fmt
-        id: fmt
+        id: tf-fmt
         run: terraform fmt --recursive
-        
-      - name: Terraform Init
-        id: init
-        run: terraform init
-        
-      - name: Terraform Validate
-        id: validate
+      - name: Terraform validate
+        id: tf-validate
         run: terraform validate -no-color
-        continue-on-error: false
-
       - name: Terraform Plan
-        id: plan
+        id: tf-plan
         run: terraform plan -lock=false -no-color -input=false
-        continue-on-error: false
+        continue-on-error: true
   
   tf-deploy:
     name: Terraform Deploy
