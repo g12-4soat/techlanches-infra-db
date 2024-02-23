@@ -13,7 +13,7 @@ resource "aws_db_instance" "mssql-techlanches-instance" {
   tags = {
     Name        = "TechLanches MSSQL Server Database"
     Repository  = "https://github.com/g12-4soat/techlanches-infra-db"
-    Environment = "Dev"
+    Environment = "Prod"
     ManagedBy   = "Terraform"
   }
 
