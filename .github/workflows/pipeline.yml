@@ -11,6 +11,11 @@ jobs:
   tf-test:
     name: Terraform Test
     runs-on: ubuntu-latest
+
+    defaults:
+        run:
+          working-directory: src
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,22 +35,18 @@ jobs:
       
       - name: Prepare environment
         id: tf-init
-        working-directory: src
         run: terraform init 
 
       - name: Terraform fmt
         id: tf-fmt        
-        working-directory: src
         run: terraform fmt --recursive
 
       - name: Terraform validate
         id: tf-validate        
-        working-directory: src
         run: terraform validate -no-color
 
       - name: Terraform Plan
         id: tf-plan        
-        working-directory: src
         run: terraform plan -lock=false -no-color -input=false
         continue-on-error: true
 
