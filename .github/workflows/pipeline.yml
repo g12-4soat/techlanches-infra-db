@@ -2,6 +2,9 @@ name: Deploy DB Infrastructure
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -70,6 +73,7 @@ jobs:
               repo: context.repo.repo,
               body: output
             })
+        
       - name: Terraform Plan Status
         if: steps.tf-plan.outcome == 'failure'
         run: exit 1
