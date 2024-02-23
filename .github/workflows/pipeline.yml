@@ -46,7 +46,7 @@ jobs:
         run: terraform plan -lock=false -no-color -input=false
         continue-on-error: true
 
-      - name: Updates
+      - name: Pull Request Updates
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         env:
