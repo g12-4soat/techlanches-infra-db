@@ -7,7 +7,7 @@ resource "aws_db_instance" "mssql-techlanches-instance" {
   storage_type         = "gp2"
   allocated_storage    = 20
   username             = var.db-username
-  password             = var.db-password
+  password             = random_password.master_password.result
   publicly_accessible  = true # Enable public accessibility
 
   tags = {

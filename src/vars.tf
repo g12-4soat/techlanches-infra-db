@@ -7,6 +7,6 @@ variable "db-username" {
   default     = "admin"
 }
 
-variable "db-password" {
-  default     = "12345678"
+variable "secrets-name" {
+  default = "db-credentials"
 }
