@@ -8,5 +8,9 @@ variable "db-username" {
 }
 
 variable "secrets-name" {
-  default = "db-credentials"
+  default = "database-credentials"
+}
+
+variable "database-name" {
+  default = "techlanches"
 }
