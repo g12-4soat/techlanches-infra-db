@@ -7,6 +7,10 @@ variable "db-username" {
   default     = "admin"
 }
 
-variable "db-password" {
-  default     = "12345678"
+variable "secrets-name" {
+  default = "database-credentials"
+}
+
+variable "database-name" {
+  default = "techlanches"
 }
