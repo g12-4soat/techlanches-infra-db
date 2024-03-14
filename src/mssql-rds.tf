@@ -3,7 +3,7 @@ resource "aws_db_instance" "mssql-techlanches-instance" {
   engine               = "sqlserver-ex"
   parameter_group_name = "default.sqlserver-ex-15.0"
   engine_version       = "15.00.4043.16.v1"
-  instance_class       = "db.t3.micro" # Eligible for AWS Free Tier
+  instance_class       = "db.t3.medium" # Eligible for AWS Free Tier
   storage_type         = "gp2"
   allocated_storage    = 20
   username             = var.db-username
