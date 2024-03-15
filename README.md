@@ -103,3 +103,7 @@ Diagrama de dados criado com [DrawSQL](https://drawsql.app/teams/tech-lanches/di
  <img src="https://github.com/g12-4soat/techlanches-infra-db/blob/main/docs/Fase3/diagrama-dados.png" style="max-width: 100%;">
 
 ---
+## Pipeline Status
+| Pipeline | Status |
+| --- | --- | 
+| DB Infrastructure | [![Deploy DB Infrastructure](https://github.com/g12-4soat/techlanches-infra-db/actions/workflows/pipeline.yml/badge.svg)](https://github.com/g12-4soat/techlanches-infra-db/actions/workflows/pipeline.yml)
