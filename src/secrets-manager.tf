@@ -1,5 +1,6 @@
 resource "aws_secretsmanager_secret" "rds_credentials" {
   name = var.secrets-name
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "rds_credentials" {
