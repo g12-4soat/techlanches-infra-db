@@ -7,8 +7,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "techlanches-terraform-db"
-    key    = "techlanches-infra-db/terraform.tfstate"
+    bucket = "tech-lanches-terraform"
+    key    = "tech-lanches-terraform-db/terraform.tfstate"
     region = "us-east-1"
   }
 }
