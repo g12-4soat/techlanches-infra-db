@@ -102,6 +102,13 @@ Diagrama de dados criado com [DrawSQL](https://drawsql.app/teams/tech-lanches/di
 
  <img src="https://github.com/g12-4soat/techlanches-infra-db/blob/main/docs/Fase3/diagrama-dados.png" style="max-width: 100%;">
 
+<details>
+  <summary>Versões</summary>
+
+## Software
+- MSSQL Server - 2019
+</details>
+
 ---
 ## Pipeline Status
 | Pipeline | Status |
